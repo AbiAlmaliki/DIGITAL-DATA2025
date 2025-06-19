@@ -78,7 +78,7 @@ export default function ViewStoPage() {
                         ) : (
                             <tr>
                                 <td colSpan="2" className="text-center py-10 text-gray-500">
-                                    Tidak ada port yang cocok dengan pencarian "{searchQuery}".
+                                    Tidak ada port yang cocok dengan pencarian {searchQuery}.
                                 </td>
                             </tr>
                         )}
