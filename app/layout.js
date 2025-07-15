@@ -3,8 +3,8 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { AuthProvider } from "@/context/AuthContext";
-// 1. Ganti atau pastikan import Toaster berasal dari sonner
-import { Toaster } from "@/components/ui/sonner"; 
+import { Toaster } from "@/components/ui/sonner";
+import Header from "@/components/Header"; // <-- 1. IMPORT HEADER
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,12 +16,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${inter.className} bg-gray-50`}>
         <AuthProvider>
-          {children}
+          <Header /> {/* <-- 2. TAMBAHKAN HEADER DI SINI */}
+          {children} {/* children sekarang akan dirender di bawah header */}
         </AuthProvider>
-        {/* 2. Komponen Toaster ini sekarang berasal dari Sonner */}
-        <Toaster /> 
+        <Toaster />
       </body>
     </html>
   );
